@@ -46,47 +46,49 @@ class ForYouDestinationWidget extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(width: 16),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      specialForYou[index].name,
-                      style: Theme.of(context).textTheme.titleMedium,
-                    ),
-                    const SizedBox(height: 8),
-                    Row(
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        const Icon(
-                          Icons.place,
-                          color: Colors.red,
-                        ),
-                        const SizedBox(width: 8),
-                        Text(specialForYou[index].location),
-                      ],
-                    ),
-                    const SizedBox(height: 8),
-                    RichText(
-                      text: TextSpan(
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        specialForYou[index].name,
+                        style: Theme.of(context).textTheme.titleMedium,
+                      ),
+                      const SizedBox(height: 8),
+                      Row(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          TextSpan(
-                            text: "\$${specialForYou[index].price} ",
-                            style: Theme.of(context)
-                                .textTheme
-                                .headlineSmall
-                                ?.copyWith(
-                                  color: AppColor.primaryColor,
-                                ),
+                          const Icon(
+                            Icons.place,
+                            color: Colors.red,
                           ),
-                          TextSpan(
-                            text: "/Person",
-                            style: Theme.of(context).textTheme.bodyMedium,
-                          ),
+                          const SizedBox(width: 8),
+                          Text(specialForYou[index].location),
                         ],
                       ),
-                    ),
-                  ],
+                      const SizedBox(height: 8),
+                      RichText(
+                        text: TextSpan(
+                          children: [
+                            TextSpan(
+                              text: "\$${specialForYou[index].price} ",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headlineSmall
+                                  ?.copyWith(
+                                    color: AppColor.primaryColor,
+                                  ),
+                            ),
+                            TextSpan(
+                              text: "/Person",
+                              style: Theme.of(context).textTheme.bodyMedium,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 )
               ],
             ),
